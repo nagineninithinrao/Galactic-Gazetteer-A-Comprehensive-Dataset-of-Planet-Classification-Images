@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Planet Prediction Result</title>
+    <link rel="stylesheet" href="../static/assets/css/output.css">
+</head>
+<body>
+    {% if predicted_class %}
+        <h2>🪐 Predicted Planet: {{ predicted_class }}</h2>
+        <h3>🔍 Your Uploaded Image</h3>
+        <img src="{{ url_for('uploaded_file', filename=uploaded_image.split('/')[-1]) }}" alt="Uploaded Image" width="250">
+        <ul>
+    <li><strong>🌞 Distance from Sun:</strong> {{ info.distance }}</li>
+    <li><strong>🔢 Position from Sun:</strong> {{ info.position }}</li>
+    <li><strong>🕐 Day Length:</strong> {{ info.day }}</li>
+    <li><strong>📆 Year Length:</strong> {{ info.year }}</li>
+    <li><strong>📏 Diameter:</strong> {{ info.diameter }}</li>
+    <li><strong>🧬 Origin of Name:</strong> {{ info.origin }}</li>
+    <li><strong>🪨 Composition:</strong> {{ info.composition }}</li>
+    <li><strong>🌐 Gravity:</strong> {{ info.gravity }}</li>
+    <li><strong>☁️ Atmosphere:</strong> {{ info.atmosphere }}</li>
+    <li><strong>🚀 Orbital Speed:</strong> {{ info.orbital_speed }}</li>
+    <li><strong>🌕 Number of Moons:</strong> {{ info.moons }}</li>
+
+</ul>
+    {% else %}
+        <h2>Upload a planet image to get started!</h2>
+        <form action="{{ url_for('output') }}" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <br><br>
+            <input type="submit" value="Predict">
+        </form>
+    {% endif %}
+</body>
+</html>

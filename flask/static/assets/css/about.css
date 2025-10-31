@@ -1,0 +1,46 @@
+#about{
+    width: 100%;
+    height: 750px;
+    padding: 10px;
+    background-color: rgb(25, 205, 82);
+    background-image:url('../img/5.jpg');
+    background-size:cover;
+}
+#nava ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin:50px 100px;
+    position: sticky;
+
+}
+#nava li a{
+    text-decoration: none;
+    font-size: 25px;
+    color: rgb(250, 244, 244);
+    padding: 10px;
+}
+#nava li a.active{
+    color:gold;
+}
+#ac{
+    display: flex;
+    margin-left: 70px;
+    margin-top: 10%;
+}
+#au{
+    font-size: 40px;
+    margin-left: 8%;
+    margin-top: -50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+#cont{
+    width: 50%;
+    height: auto;
+    padding: 10px;
+    font-size: 20px;
+    margin-left: 5%;
+    font-family:'Times New Roman', Times, serif;
+}
